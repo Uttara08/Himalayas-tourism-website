@@ -161,7 +161,7 @@ describe('TourCartComponent', () => {
         fixture.detectChanges();
         tick();
 
-        const button = fixture.debugElement.queryAll(By.css("button"))[1];
+        const button = fixture.debugElement.queryAll(By.css("button"))[0];
         button.triggerEventHandler("click", null);
         fixture.detectChanges();
         tick();

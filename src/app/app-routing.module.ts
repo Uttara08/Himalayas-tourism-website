@@ -5,7 +5,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { TourCartComponent } from './tour-cart/tour-cart.component';
 import { TourRequestsComponent } from './tour-requests/tour-requests.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   
   { path: "", component: HomeComponent },
   { path: "tour-cart/:id", component: TourCartComponent  },
