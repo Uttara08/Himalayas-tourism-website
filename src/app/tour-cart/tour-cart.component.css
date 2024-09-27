@@ -1,6 +1,8 @@
 #header {
     display: flex;
     justify-content: space-between;
+    color: whitesmoke;
+    background-color: rgb(29, 29, 100);
 }
 
 #header > nav > mat-icon {
@@ -9,10 +11,11 @@
 
 #tour-content {
     display: flex;
-    margin-top: 100px;
+    margin-top: 10px;
     justify-content: center;
     align-items: flex-start;
 }
+
 
 #tour-detail {
     width: 60%;
@@ -23,21 +26,48 @@
 }
 
 #tour-detail img {
-    width: 90%;
+   margin-left: 20%;
+    width: 50%;
+    height: 350px;
 }
 #tour-detail p {
-    width: 90%;
+    width: 50%;
+    margin-left: 20%;
     margin-top: 10px;
     text-align: justify;
 }
 
 #tour-request {
+    background-color: whitesmoke;
+    margin-bottom: 40%;
     width: 35%;
     display: flex;
     padding-left: 10px;
     flex-direction: column;
+    border-radius: 1%;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
 }
 
 #per-tour {
     font-size: small;
+}
+button{
+    /* button{
+        color: whitesmoke;
+          background-color: rgb(29, 29, 100);
+        padding: .25rem 1rem;
+        border: none;
+        border-radius: 20px;
+        margin-right: .5rem;
+        margin-left: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      } */
+      color: whitesmoke;
+      background-color: rgb(29, 29, 100);
+    margin-top: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+img{
+    border-radius: 5%;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
 }

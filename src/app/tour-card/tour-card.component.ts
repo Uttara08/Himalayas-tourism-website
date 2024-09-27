@@ -7,6 +7,7 @@ import { Tour } from '../models/tour';
   styleUrls: ['./tour-card.component.css']
 })
 export class TourCardComponent implements OnInit {
+  
 
   @Input()
   tour!: Tour

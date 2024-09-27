@@ -1,40 +1,60 @@
-<mat-toolbar id="header" color="primary">
-    <h1>GuidedTours</h1>
-    <nav>
-        <mat-icon routerLink="/">home</mat-icon>
-    </nav>
+<mat-toolbar id="header">
+  <h1>View Product</h1>
+  <nav>
+    <mat-icon routerLink="/explore-page">home</mat-icon>
+  </nav>
 </mat-toolbar>
+
 <section id="tour-content">
-    <div id="tour-detail">
-        <h1>{{tour?.tourName}}</h1>
-        <h3>
-            <mat-icon color="accent" *ngFor="let star of stars">star</mat-icon>
-        </h3>
-        {{tour?.duration}} Days 
-        <img src="../../assets/images/{{tour?.image}}.jpg">
-        <p>{{tour?.description}}</p>
-    </div>
-    <form id="tour-request">
-        <h1>Book this Tour</h1>
-        <h2>Tour Price ${{tour?.tourPrice}} USD &nbsp;<span id="per-tour"> PER TOUR</span></h2>
-        <h3>When are you travelling?</h3>
-        <mat-form-field appearance="legacy">
-            <mat-label>Select Date</mat-label>
-            <input matInput type="date" required placeholder="First Name" name="dateOfTravel" [(ngModel)] = "tourRequest.dateOfTravel">
-        </mat-form-field>
-        <h3>Enter your personal details</h3>
-        <mat-form-field appearance="legacy">
-            <mat-label>Name</mat-label>
-            <input matInput type="text"required placeholder="Name" name="customerName" [(ngModel)] = "tourRequest.customerName">
-        </mat-form-field>
-        <mat-form-field appearance="legacy">
-            <mat-label>Email</mat-label>
-            <input matInput type="email"required placeholder="Email" name="customerEmail" [(ngModel)] = "tourRequest.customerEmail">
-        </mat-form-field>
-        <mat-form-field appearance="legacy">
-            <mat-label>Phone</mat-label>
-            <input matInput type="phone"required placeholder="Phone" name="customerPhone" [(ngModel)] = "tourRequest.customerPhone">
-        </mat-form-field>
-        <button mat-flat-button color="primary" (click)="makeRequest()">Make Request</button>
-    </form>
+  <div id="tour-detail">
+    <h1>{{tour?.tourName}}</h1>
+    <h3>
+      <mat-icon color="accent" *ngFor="let star of stars">star</mat-icon>
+    </h3>
+    <img src="../../assets/images/{{tour?.image}}.jpg" alt="Tour Image">
+    <p>{{tour?.description}}</p>
+  </div>
+
+  <form [formGroup]="tourRequestForm" (ngSubmit)="makeRequest()" id="tour-request">
+    <h1><b>Form for placing an order</b></h1>
+    <h2> Price: ₹ {{tour?.tourPrice}} <span id="per-tour"></span></h2>
+    <h3>Enter your personal details</h3>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Select Date</mat-label>
+      <input matInput type="date" formControlName="dateOfTravel" required>
+      <mat-error *ngIf="tourRequestForm.get('dateOfTravel')?.hasError('required')">
+        Date of Travel is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="customerName" required>
+      <mat-error *ngIf="tourRequestForm.get('customerName')?.hasError('required')">Name is required</mat-error>
+      <mat-error *ngIf="tourRequestForm.get('customerName')?.hasError('pattern')">Name must start with an alphabet</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="customerEmail" required>
+      <mat-error *ngIf="tourRequestForm.get('customerEmail')?.hasError('required')">Email is required</mat-error>
+      <mat-error *ngIf="tourRequestForm.get('customerEmail')?.hasError('email')">Please enter a valid email address</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Phone</mat-label>
+      <input matInput type="tel" formControlName="customerPhone" required>
+      <mat-error *ngIf="tourRequestForm.get('customerPhone')?.hasError('required')">Phone number is required</mat-error>
+      <mat-error *ngIf="tourRequestForm.get('customerPhone')?.hasError('pattern')">Please enter a valid 10-digit phone number starting with 9, 8, 7, or 6</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Address</mat-label>
+      <textarea matInput formControlName="customerAddress" required></textarea>
+      <mat-error *ngIf="tourRequestForm.get('customerAddress')?.hasError('required')">Address is required</mat-error>
+    </mat-form-field>
+
+    <button mat-flat-button type="submit">Make Order</button>
+  </form>
 </section>

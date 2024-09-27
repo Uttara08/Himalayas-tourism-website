@@ -5,10 +5,9 @@ export type Tour = {
     description?: string;
     rating: number;
     tourPrice?: number;
-    duration?: number;
-    transportation?: string;
     categories?: Array<string>;
     details?: string;
-    languages?: Array<string>;
     tourGuide?: string;
+    weight? : string;
+    dateOfTravel: string;
 }

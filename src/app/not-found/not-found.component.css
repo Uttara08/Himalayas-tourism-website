@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set this to the desired height */
+  }
+  
+  .centered-image {
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+
+/* Adjust icon styles as needed */
+.mat-icon {
+  font-size: 24px;
+  margin: 0 8px;
+   /* Add some horizontal spacing between icons */
+}
+
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    color: whitesmoke;
+    background-color: rgb(29, 29, 100);
+    
+}
+
+  

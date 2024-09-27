@@ -1,10 +1,13 @@
+
 .tour-card {
-    width: 19%;
-    margin: 30px 10px ;
+    width: 20%;
+    height: 40%;
+    margin: 30px 30px ;
     display: inline-flex;
     flex-direction: column;
     max-height: 400px;
     justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .tour-details {
@@ -13,7 +16,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
-    letter-spacing: .25px;
+    
     font-weight: 500;
     font-size: 1.15em;
     -webkit-line-clamp: 2;
@@ -27,4 +30,5 @@
 .cart-icon {
     display: inline;
     margin-right: 40px;
+    color: rgb(4, 10, 117);;
 }

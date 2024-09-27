@@ -1,0 +1,12 @@
+<mat-toolbar id="header" >
+    <h1>HIMACHAL TOURISM</h1>
+</mat-toolbar>
+<div id="login-form">
+    <h3><b>If you are a Admin, Enter your Admin Code</b></h3>
+    <mat-form-field appearance="legacy">
+        <mat-label>Enter Admin Code</mat-label>
+        <input matInput name="tourGuideCode" [(ngModel)]="tourGuideCode" type="password" placeholder="Tour Guide Code">
+    </mat-form-field>
+    <button mat-button (click)="validateTourGuideCode()">Submit</button>
+    <h3>If you are a Visitor, <a routerLink="">click here...</a></h3>
+</div>

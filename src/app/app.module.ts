@@ -11,9 +11,9 @@ import { TourCardComponent } from './tour-card/tour-card.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TourRequestsComponent } from './tour-requests/tour-requests.component';
 import { TourListComponent } from './tour-list/tour-list.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 // Material Components
-import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -24,6 +24,9 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ExplorePageComponent } from './explore-page/explore-page.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TourCardComponent,
     NotFoundComponent,
     TourRequestsComponent,
-    TourListComponent
+    TourListComponent,
+    LoginComponent,
+    LandingPageComponent,
+    ExplorePageComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +56,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatChipsModule,
     MatSnackBarModule,
     MatTableModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
